@@ -1,10 +1,708 @@
-<html>
-    <head>
-        <title>My first webpage</title>
-        <meta http-equiv="Content-Type" content="text/html;charset=gb2312" />
-    </head>
-    <body>
-        <p>Hello, world!</p>
-        <img src="kobe24.jpg" alt="Kobe Bryant" />
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- bootstrap-css -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<!--// bootstrap-css -->
+<!-- css -->
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+<!--// css -->
+<!-- gallery -->
+<link type="text/css" rel="stylesheet" href="css/cm-overlay.css" />
+<!-- //gallery -->
+<!-- font-awesome icons -->
+<link href="css/font-awesome.css" rel="stylesheet"> 
+<!-- //font-awesome icons -->
+<!-- font -->
+<link href="http://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
+<!-- //font -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script> 
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+	<div class="agileinfo-dot">
+		<!-- banner -->
+		<div class="banner jarallax">
+			<div class="header">
+				<div class="container">
+					<nav class="navbar navbar-default">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+						  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						  </button>
+							<div class="agileinfo-social-grids">
+								<ul>
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-rss"></i></a></li>
+									<li><a href="#"><i class="fa fa-vk"></i></a></li>
+								</ul>
+							</div>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+							<nav>
+								<ul class="nav navbar-nav">
+									<li class="active"><a href="index.html">Home</a></li>
+									<li><a href="#about" class="scroll">About</a></li>
+									<li><a href="#services" class="scroll">Services</a></li>
+									<li><a href="#menu" class="scroll">Menu</a></li>
+									<li><a href="#team" class="scroll">Team</a></li>
+									<li><a href="#blog" class="scroll">Blog</a></li>
+									<li><a href="#mail" class="scroll">Mail Us</a></li>
+								</ul>
+							</nav>
+						</div>
+						<!-- /.navbar-collapse -->
+					</nav>
+				</div>
+			</div>
+			<div class="w3layouts-banner-info">
+				<div class="container">
+					<div class="agileits-logo">
+						<h1><a href="index.html">Spicy Club</a></h1>
+						<p>Donec vel viverra nibh. Ut laoreet ac nisl sit amet vehicula.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- //banner -->
+	</div>
+	<!-- about -->
+	<div class="about" id="about">
+		<div class="container">
+			<div class="w3l-heading">
+				<h2>About Us</h2>
+			</div>
+			<div class="w3-about-grids">
+				<div class="col-md-5 w3-about-left">
+					<h5>Lorem ipsum dolor sit amet</h5>
+					<p>Ut fringilla euismod sagittis. Cras semper ante sapien, in ornare nisi euismod eu. Morbi dapibus est non leo vestibulum aliquet. Sed viverra nisi pharetra, scelerisque nisi eu, tempus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In pellentesque, lectus at auctor luctus, lacus nibh dignissim ante, sed maximus arcu odio vitae lectus. <span>Phasellus vestibulum velit sed nisi ultricies scelerisque. Vivamus ligula mauris, euismod in dictum id, tempus ac odio. Etiam tristique felis eros, tincidunt interdum elit gravida et. Donec porttitor vehicula tortor, malesuada aliquet nibh finibus ac. Maecenas consectetur nisi ipsum, blandit finibus quam tristique vitae.</span></p>
+					<div class="w3l-button">
+						<a href="#" data-toggle="modal" data-target="#myModal">More</a>
+					</div>
+				</div>
+				<div class="col-md-2 w3ls-about-img1">
+					
+				</div>
+				<div class="col-md-5 w3ls-about-img2">
+					
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //about -->
+	<!-- modal -->
+	<div class="modal about-modal fade" id="myModal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header"> 
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+						<h4 class="modal-title">Spicy Club</h4>
+					</div> 
+					<div class="modal-body">
+					<div class="agileits-w3layouts-info">
+						<img src="images/2.jpg" alt="" />
+						<p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper.  Cras tempor massa luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- //modal -->
+	<!-- services -->
+	<div class="services" id="services">
+		<div class="container">
+			<div class="w3l-heading">
+				<h3>Our Services</h3>
+			</div>
+			<div class="services-grids">
+				<div class="col-md-3 wthree-services-grid">
+					<div class="wthree-services-icon">
+						<i class="fa fa-cutlery" aria-hidden="true"></i>
+					</div>
+					<div class="wthree-services-info">
+						<h5>Fusce feugiat</h5>
+						<p>Donec sed nisi leo. Ut at sagittis nisi. Cras porttitor a purus ac rutrum. </p>
+					</div>
+				</div>
+				<div class="col-md-3 wthree-services-grid">
+					<div class="wthree-services-icon">
+						<i class="fa fa-glass" aria-hidden="true"></i>
+					</div>
+					<div class="wthree-services-info">
+						<h5>Fusce feugiat</h5>
+						<p>Donec sed nisi leo. Ut at sagittis nisi. Cras porttitor a purus ac rutrum. </p>
+					</div>
+				</div>
+				<div class="col-md-3 wthree-services-grid">
+					<div class="wthree-services-icon">
+						<i class="fa fa-user" aria-hidden="true"></i>
+					</div>
+					<div class="wthree-services-info">
+						<h5>Fusce feugiat</h5>
+						<p>Donec sed nisi leo. Ut at sagittis nisi. Cras porttitor a purus ac rutrum. </p>
+					</div>
+				</div>
+				<div class="col-md-3 wthree-services-grid">
+					<div class="wthree-services-icon">
+						<i class="fa fa-asterisk" aria-hidden="true"></i>
+					</div>
+					<div class="wthree-services-info">
+						<h5>Fusce feugiat</h5>
+						<p>Donec sed nisi leo. Ut at sagittis nisi. Cras porttitor a purus ac rutrum. </p>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //services -->
+	<!-- gallery -->
+	<div class="gallery" id="menu">
+		<div class="container">
+			<div class="w3l-heading">
+				<h3>Our Menu</h3>
+			</div>
+			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+					<ul id="myTab" class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#home-main" id="home-tab" role="tab" data-toggle="tab" aria-controls="home-main" aria-expanded="true">All</a></li>
+						<li role="presentation"><a href="#learning" role="tab" id="learning-tab" data-toggle="tab" aria-controls="learning">Category 1</a></li>
+						<li role="presentation"><a href="#playing" role="tab" id="playing-tab" data-toggle="tab" aria-controls="playing">Category 2</a></li>
+						<li role="presentation"><a href="#painting" role="tab" id="painting-tab" data-toggle="tab" aria-controls="painting">Category 3</a></li>
+						<li role="presentation"><a href="#school" role="tab" id="school-tab" data-toggle="tab" aria-controls="school">Category 4</a></li>
+					</ul>
+					<div id="myTabContent" class="tab-content">
+						<div role="tabpanel" class="tab-pane fade in active" id="home-main" aria-labelledby="home-tab">
+							<div class="w3_tab_img">
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g1.jpg">
+										  <figure class="imghvr-shutter-in-out-diag-2"><img src="images/g1.jpg" alt=" " class="img-responsive" />
+										  </figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Lorem</h5>
+										<p>Consectetur</p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g2.jpg">
+										  <figure class="imghvr-shutter-in-out-diag-2"><img src="images/g2.jpg" alt=" " class="img-responsive" />
+										  </figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Ipsum</h5>
+										<p>Adipiscing </p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g3.jpg">
+										  <figure class="imghvr-shutter-in-out-diag-2"><img src="images/g3.jpg" alt=" " class="img-responsive" />
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Vivamus</h5>
+										<p>Ullamcorper  </p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g4.jpg">
+										  <figure class="imghvr-shutter-in-out-diag-2"><img src="images/g4.jpg" alt=" " class="img-responsive" />
+										</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Fusce</h5>
+										<p>Tristique</p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g5.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g5.jpg" alt=" " class="img-responsive" />
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Nullam</h5>
+										<p>accumsan</p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g6.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g6.jpg" alt=" " class="img-responsive" />
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Donec</h5>
+										<p>Vulputate</p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g7.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g7.jpg" alt=" " class="img-responsive" />
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Vivamus</h5>
+										<p>Sodales</p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g1.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g1.jpg" alt=" " class="img-responsive" />
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Morbi</h5>
+										<p>Ornare </p>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="learning" aria-labelledby="learning-tab">
+							<div class="w3_tab_img">
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g2.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g2.jpg" alt=" " class="img-responsive">
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Vivamus</h5>
+										<p>Eleifend</p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g3.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g3.jpg" alt=" " class="img-responsive">
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Cras</h5>
+										<p>Pulvinar</p>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="playing" aria-labelledby="playing-tab">
+							<div class="w3_tab_img">
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g4.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g4.jpg" alt=" " class="img-responsive">
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Maecenas</h5>
+										<p>Blandit</p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g5.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g5.jpg" alt=" " class="img-responsive">
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Sodales</h5>
+										<p>Vivamus</p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g6.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g6.jpg" alt=" " class="img-responsive">
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Vivamus</h5>
+										<p>Eleifend</p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g7.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g7.jpg" alt=" " class="img-responsive">
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Maecenas</h5>
+										<p>Blandit</p>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="painting" aria-labelledby="painting-tab">
+							<div class="w3_tab_img">
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g1.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g1.jpg" alt=" " class="img-responsive">
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Morbi</h5>
+										<p>Ornare </p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g2.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g2.jpg" alt=" " class="img-responsive">
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Cras</h5>
+										<p>Pulvinar</p>
+									</div>
+								</div>
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g3.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g3.jpg" alt=" " class="img-responsive">
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Donec</h5>
+										<p>Vulputate</p>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<div role="tabpanel" class="tab-pane fade" id="school" aria-labelledby="school-tab">
+							<div class="w3_tab_img">
+								<div class="col-sm-3 w3_tab_img_left">
+									<div class="demo">
+										<a class="cm-overlay" href="images/g4.jpg">
+											<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g4.jpg" alt=" " class="img-responsive">
+											</figure>
+										</a>
+									</div>
+									<div class="agile-gallery-info">
+										<h5>Lorem</h5>
+										<p>Consectetur</p>
+									</div>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+					</div>
+			</div>
+			<script src="js/jquery.tools.min.js"></script>
+			<script src="js/jquery.mobile.custom.min.js"></script>
+			<script src="js/jquery.cm-overlay.js"></script>
+			<script>
+				$(document).ready(function(){
+					$('.cm-overlay').cmOverlay();
+				});
+			</script>
+		</div>
+	</div>
+	<!-- //gallery -->
+	<!-- team -->
+	<div class="team" id="team">
+		<div class="container">
+			<div class="w3l-heading team-heading">
+				<h3>Our Team</h3>
+			</div>
+			<div class="team-row">
+					<div class="col-md-3 team-grids">
+						<div class="team-img">
+							<img class="img-responsive" src="images/t1.jpg" alt="">
+							<div class="captn">
+								<div class="captn-top">
+									<h4>Edwards Doe</h4>
+									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt</p>
+								</div>
+								<div class="wthree-social-grids">
+									<ul>
+										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fa fa-rss"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>					
+					<div class="col-md-3 team-grids">
+						<div class="team-img">
+							<img class="img-responsive" src="images/t2.jpg" alt="">
+							<div class="captn">
+								<div class="captn-top">
+									<h4>Mark Sophia</h4>
+									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt</p>
+								</div>
+								<div class="wthree-social-grids">
+									<ul>
+										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fa fa-rss"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids">
+						<div class="team-img">
+							<img class="img-responsive" src="images/t3.jpg" alt="">
+							<div class="captn">
+								<div class="captn-top">
+									<h4>Michael amet</h4>
+									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt</p>
+								</div>
+								<div class="wthree-social-grids">
+									<ul>
+										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fa fa-rss"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids">
+						<div class="team-img">
+							<img class="img-responsive" src="images/t4.jpg" alt="">
+							<div class="captn">
+								<div class="captn-top">
+									<h4>Daniel Nyari</h4>
+									<p>Aenean pulvinar ac enimet posuere tincidunt velit Utin tincidunt</p>
+								</div>
+								<div class="wthree-social-grids">
+									<ul>
+										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="#"><i class="fa fa-rss"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- //team -->
+	<!-- blog -->
+	<div class="blog" id="blog">
+		<div class="container">
+			<div class="w3l-heading">
+				<h3>Our Blog</h3>
+			</div>
+			<div class="w3-agile-blog-grids">
+				<div class="col-md-3 agileits-blog-grid">
+					<div class="blog-info">
+						<a href="#" data-toggle="modal" data-target="#myModal"><img src="images/b1.jpg" alt=""></a>
+						<div class="blog-caption"> 
+							<h4><a href="#" data-toggle="modal" data-target="#myModal">Lorem ipsum</a></h4>
+							<p>By <a href="#">Admin</a> on Nov 02, 2016</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 agileits-blog-grid">
+					<div class="blog-info">
+						<a href="#" data-toggle="modal" data-target="#myModal"><img src="images/b2.jpg" alt=""></a>
+						<div class="blog-caption"> 
+							<h4><a href="#" data-toggle="modal" data-target="#myModal">Nulla sit amet</a></h4>
+							<p>By <a href="#">Admin</a> on Dec 16, 2016</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 agileits-blog-grid">
+					<div class="blog-info">
+						<a href="#" data-toggle="modal" data-target="#myModal"><img src="images/b3.jpg" alt=""></a>
+						<div class="blog-caption"> 
+							<h4><a href="#" data-toggle="modal" data-target="#myModal">Vivamus quis</a></h4>
+							<p>By <a href="#">Admin</a> on Nov 24, 2016</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 agileits-blog-grid">
+					<div class="blog-info">
+						<a href="#" data-toggle="modal" data-target="#myModal"><img src="images/b4.jpg" alt=""></a>
+						<div class="blog-caption"> 
+							<h4><a href="#" data-toggle="modal" data-target="#myModal">Donec dolor</a></h4>
+							<p>By <a href="#">Admin</a> on Dec 14, 2016</p>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!-- blog -->
+	<!-- map -->
+	<!---<div class="map">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96748.47026078735!2d-74.25419852950611!3d40.73144986754836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25370329a0e1d%3A0xe1bcdc2adcfee473!2sNewark%2C+NJ%2C+USA!5e0!3m2!1sen!2sin!4v1479793381615" allowfullscreen></iframe>
+	</div>--->
+	<!-- //map -->
+	<!-- contact -->
+	<div class="contact" id="mail">
+		<div class="container">
+			<div class="w3l-heading">
+				<h3>Contact Us</h3>
+			</div>
+			<div class="address">
+				<div class="col-sm-4 address-grids">
+					<h4>Address :</h4>
+					<p>Eiusmod Tempor inc<br>
+						<span>St Dolore Place,</span>
+						San Francisco 56777
+					</p>	
+				</div>
+				<div class="col-sm-4 address-grids">
+					<h4>Phone :</h4>
+					<p>+2 123 456 789</p>
+					<p>+2 987 654 321</p>
+				</div>
+				<div class="col-sm-4 address-grids">
+					<h4>Email :</h4>
+					<p><a href="mailto:example@email.com">mail@example.com</a></p>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="contact-form">
+				<h4>Contact Form</h4>
+				<form action="#" method="post">
+					<div class="fields-grid">
+						<div class="styled-input agile-styled-input-top">
+							<input type="text" name="Full Name" required="">
+							<label>Full Name</label>
+							<span></span>
+						</div>
+						<div class="styled-input agile-styled-input-top">
+							<input type="text" name="Phone" required=""> 
+							<label>Phone</label>
+							<span></span>
+						</div>
+						<div class="styled-input">
+							<input type="text" name="Email" required=""> 
+							<label>Email</label>
+							<span></span>
+						</div> 
+						<div class="styled-input">
+							<input type="text" name="Subject" required="">
+							<label>Subject</label>
+							<span></span>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="styled-input textarea-grid">
+						<textarea name="Message" required=""></textarea>
+						<label>Message</label>
+						<span></span>
+					</div>	 
+					<input type="submit" value="SEND">
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //contact -->
+	<!-- newsletter -->
+	<div class="newsletter">
+		<div class="container">
+			<div class="col-sm-6 newsletter-left">
+				<h5>Subscribe to our email newsletter to receive updates</h5>
+			</div>
+			<div class="col-sm-6 newsletter-right">
+				<form action="#" method="post">
+					<input type="text" placeholder="Subscribe" name="Subscribe" required="">
+					<button class="btn1"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+				</form>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!-- //newsletter -->
+	<!-- footer -->
+	<footer>
+		<div class="container">
+			<div class="copyright">
+				<p>Copyright &copy; 2020.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+			</div>
+		</div>
+	</footer>
+	<!-- //footer -->
+	<script src="js/jarallax.js"></script>
+	<script src="js/SmoothScroll.min.js"></script>
+	<script type="text/javascript">
+		/* init Jarallax */
+		$('.jarallax').jarallax({
+			speed: 0.5,
+			imgWidth: 1366,
+			imgHeight: 768
+		})
+	</script>
+	<script src="js/responsiveslides.min.js"></script>
+	<script type="text/javascript" src="js/move-top.js"></script>
+	<script type="text/javascript" src="js/easing.js"></script>
+	<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>	
 </html>
