@@ -1,0 +1,36 @@
+/*!
+ * md5-es
+ * https://github.com/logotype/es-crypto.git
+ *
+ * Copyright 2017 Victor Norgren
+ * Released under the MIT license
+ */
+
+/*!
+ * vue-router v4.6.4
+ * (c) 2025 Eduardo San Martin Morote
+ * @license MIT
+ */
+
+/**
+ * NProgress, (c) 2013, 2014 Rico Sta. Cruz - http://ricostacruz.com/nprogress
+ * @license MIT
+ */
+
+/**
+* @vue/reactivity v3.5.33
+* (c) 2018-present Yuxi (Evan) You and Vue contributors
+* @license MIT
+**/
+
+/**
+* @vue/runtime-dom v3.5.33
+* (c) 2018-present Yuxi (Evan) You and Vue contributors
+* @license MIT
+**/
+
+/**
+* @vue/shared v3.5.33
+* (c) 2018-present Yuxi (Evan) You and Vue contributors
+* @license MIT
+**/
