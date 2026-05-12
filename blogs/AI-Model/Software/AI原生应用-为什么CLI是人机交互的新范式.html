@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-rc.19">
+    <script>
+      (function() {
+        const userMode = localStorage.getItem('vuepress-reco-color-scheme') || 'auto';
+        const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (userMode === 'dark' || (userMode === 'auto' && systemDarkMode)) {
+          document.documentElement.classList.toggle('dark', true);
+        }
+      })();
+    </script>
+    <link rel="icon" href="/logo.jpg"><title>AI原生应用：为什么CLI是人机交互的新范式 | Water Star</title><meta name="description" content="AI原生应用为什么选择CLI而非GUI，Google七大设计原则，五大设计哲学，Agent防坑指南">
+    <link rel="stylesheet" href="/assets/css/styles.65d495b3.css">
+    <link rel="preload" href="/assets/js/runtime~app.4d55a42b.js" as="script"><link rel="preload" href="/assets/css/styles.65d495b3.css" as="style"><link rel="preload" href="/assets/js/103.5f9a2a3e.js" as="script"><link rel="preload" href="/assets/js/app.e8abd92e.js" as="script">
+  </head>
+  <body>
+<body>
+    <div id="app"><!--[--><div class="theme-container series--no show-catalog"><header class="navbar-container not-open"><div class="navbar-inner"><div class="site-brand nav-item"><img class="logo" src="/logo.jpg" alt="Water Star"><a href="/" class="site-name can-hide">Water Star</a></div><div class="nav-item navbar-links-wrapper" style=""><div><form class="search-box" role="search"><input type="search" autocomplete="off" spellcheck="false" value><!----></form></div><nav class="navbar-links"><!--[--><div class="navbar-links__item"><a href="/" class="link" aria-label="主页"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->主页<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/posts.html" class="link" aria-label="文章"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->文章<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/categories/AI-Model/1.html" class="link" aria-label="分类"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->分类<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/tags/AI-Model/1.html" class="link" aria-label "标签"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->标签<!--]--></span></span><!--[--><!--]--></a></div><div class="navbar-links__item"><a href="/docs/" class="link" aria-label="文档"><!--[--><!--]--><span class="xicon-container left"><!--[--><!----><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->文档<!--]--></span></span><!--[--><!--]--></a></div><!--]--><!----><span class="xicon-container btn-toggle-dark-mode btn--dark-mode navbar-links__item"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" style="width:20px;height:20px;font-size:20px;color:;"><path d="M15 2h2v3h-2z" fill="currentColor"></path><path d="M27 15h3v2h-3z" fill="currentColor"></path><path d="M15 27h2v3h-2z" fill="currentColor"></path><path d="M2 15h3v2H2z" fill="currentColor"></path><path d="M5.45 6.884l1.414-1.415l2.121 2.122l-1.414 1.414z" fill="currentColor"></path><path d="M23 7.58l2.121-2.12l1.414 1.414l-2.121 2.121z" fill="currentColor"></path><path d="M23.002 24.416l1.415-1.414l2.12 2.122l-1.413 1.414z" fill="currentColor"></path><path d="M5.47 25.13L7.59 23L9 24.42l-2.12 2.12l-1.41-1.41z" fill="currentColor"></path><path d="M16 8a8 8 0 1 0 8 8a8 8 0 0 0-16zm0 14a6 6 0 0 1 0-12z" fill="currentColor"></path></svg></span></nav></div></div></header>
+<div class="wrap">
+
+
+<!-- ========== 封面 ========== -->
+<div class="cover">
+  <h1>AI 原生应用：<br>为什么 CLI 是人机交互的新范式</h1>
+  <p class="sub">从 Google 7 条设计原则到 Agent 友好架构——深入解析为什么 AI 时代最好的界面是命令行，以及如何在"同时服务人类和机器"的新时代做好人机交互设计</p>
+  <div class="tags">
+    <span>AI原生应用</span>
+    <span>CLI</span>
+    <span>人机交互</span>
+    <span>Agent友好设计</span>
+    <span>Google设计原则</span>
+    <span>AI Agent</span>
+    <span>命令行复兴</span>
+  </div>
+  <p style="margin-top:22px;font-size:.85rem;opacity:.55">wangzhi &nbsp;·&nbsp; 2026-05-12</p>
+</div>
+
+<!-- ========== 摘要 ========== -->
+<div class="abstract">
+  <strong>摘要：</strong>2025-2026 年，一场静默却深刻的<strong>人机交互革命</strong>正在发生。飞书、Google、Stripe、OpenAI、Anthropic——这些看似毫不相关的科技巨头，在过去一年内不约而同地推出了面向 AI 的 CLI（命令行界面）工具。<strong>Claude Code 年化收入突破 10 亿美元，OpenAI 仅用 51 天就跟进发布 Codex CLI</strong>——这不是巧合，而是技术演进的必然方向。本文将系统回答三个问题：（1）<strong>为什么 AI 原生应用首选 CLI 而非 GUI？</strong>（2）<strong>CLI 作为人机交互界面，如何平衡"对 Agent 友好"与"对人类友好"？</strong>（3）<strong>Google 提出的 7 条 CLI 设计原则具体是什么，如何落地？</strong>文章将从技术本质、实际案例、设计原则到落地清单，为你提供一份完整的 AI 原生 CLI 设计指南。
+</div>
+
+<!-- ========== 一、现象：CLI 的全面复兴 ========== -->
+<h2>一、现象：2026 年 CLI 的全面复兴</h2>
+
+<p>如果你关注过去一年的 AI 工具生态，会发现一个有趣的现象：<strong>最先进的 AI 产品正在集体回归命令行</strong>。</p>
+
+<!-- 时间线 -->
+<div class="fig">
+<div class="fig" style="max-width:680px;margin-left:auto;margin-right:auto">
+  <img /images/AI-Model/cli_gui_protocol_stack.png alt="图1：GUI vs CLI 协议栈对比" style="width:100%;border-radius:8px;display:block"/>
+  <p class="fig-cap">图1：GUI vs CLI 协议栈对比</p>
+</div>
+  <p class="fig-cap">图1：2025-2026年AI原生CLI工具爆发时间线</p>
+</div>
+
+<h3>1.1 不只是开发者工具</h3>
+<p>这次 CLI 复兴的参与者远超传统的开发者工具范畴：</p>
+
+<table>
+<tr><th>公司</th><th>CLI 工具</th><th>领域</th></tr>
+<tr><td>Anthropic</td><td>Claude Code</td><td>AI 编程助手</td></tr>
+<tr><td>OpenAI</td><td>Codex CLI</td><td>AI 编程助手</td></tr>
+<tr><td>Google</td><td>Gemini CLI + Workspace CLI</td><td>AI 办公协作</td></tr>
+<tr><td>飞书 (ByteDance)</td><td>Lark CLI / Feishu CLI</td><td>企业协作</td></tr>
+<tr><td>钉钉 (Alibaba)</td><td>DingTalk CLI</td><td>企业协作</td></tr>
+<tr><td>Stripe</td><td>Stripe CLI</td><td>金融支付</td></tr>
+<tr><td>ElevenLabs</td><td>ElevenLabs CLI</td><td>语音合成</td></tr>
+<tr><td>Vercel</td><td>Vercel CLI</td><td>云部署</td></tr>
+</table>
+
+<p>从 AI 编程到企业办公，从语音合成到金融支付——<strong>CLI 正在成为 AI 时代通用的能力分发方式</strong>。</p>
+
+<div class="highlight info">
+  <strong>关键洞察：</strong>这不仅仅是"开发者喜欢终端"的延续。根本性的变化在于——<strong>CLI 的消费者从纯人类变成了"人类 + AI Agent"双主体</strong>。这是人机交互历史上第一次需要认真设计"同时服务两种用户"的接口。
+</div>
+
+
+<!-- ========== 二、本质：为什么是 CLI？ ========== -->
+<h2>二、本质：为什么 AI 原生应用选择 CLI</h2>
+
+<p>在回答"如何做好 CLI 人机交互"之前，我们必须先理解一个更基础的问题：<strong>为什么偏偏是 CLI？</strong></p>
+
+<h3>2.1 文本协议的天作之合</h3>
+<p>答案其实出奇地简单：<strong>LLM 本质上是一个处理文本的概率模型——给它文本，它吐出文本。而 CLI 恰好也是这么工作的。</strong></p>
+
+<div class="fig">
+<div class="fig" style="max-width:680px;margin-left:auto;margin-right:auto">
+  <img /images/AI-Model/token_economy_comparison.png alt="图2：Token 经济性对比" style="width:100%;border-radius:8px;display:block"/>
+  <p class="fig-cap">图2：Token 经济性对比</p>
+</div>
+  <p class="fig-cap">图2：LLM与CLI通过文本协议实现零成本对接</p>
+</div>
+
+<p>GUI（图形用户界面）的工作流程是：<strong>用户意图 → 坐标定位 → 点击操作 → 触发事件 → API 调用</strong>。每一层都是信息损失和延迟的来源。而 CLI 是<strong>输入结构化文本 → 输出结构化文本</strong>，与 LLM 的工作模式完全一致，不需要任何中间转换层。</p>
+
+<h3>2.2 四大核心优势</h3>
+
+<p>除了协议匹配之外，CLI 在 AI 场景下还有四大不可替代的优势：</p>
+
+<!-- 数据卡片 -->
+<div class="metric-row">
+  <div class="metric">
+    <div class="val">~84%</div>
+    <div class="lbl">Token 节省<br>(渐进式发现 vs 全量注入)</div>
+  </div>
+  <div class="metric">
+    <div class="val">∞</div>
+    <div class="lbl">可组合性<br>(Unix 管道哲学)</div>
+  </div>
+  <div class="metric">
+    <div class="val">0ms</div>
+    <div class="lbl">额外延迟<br>(无渲染管道)</div>
+  </div>
+</div>
+
+<h3>2.2.1 优势一：渐进式发现（Progressive Discovery）</h3>
+<p>这是 CLI 相对于 API 最被低估的优势之一。</p>
+
+<div class="exp-box">
+  <div class="exp-head red">❌ API 方式：全量注入</div>
+  <div class="exp-body">
+    <p>每次对话，Agent 都需要接收所有工具的完整 JSON Schema 定义。假设你的工具集有 84 个工具，平均每个 Schema 约 185 tokens：</p>
+    <pre><code>// API 模式：每次对话都注入全部工具定义（不管用不用）
+// 总计 ≈ 84 × 185 = 15,540 tokens/轮
+// 用户只用了其中 3 个工具 → 浪费 98.2%</code></pre>
+    <p style="color:#A32D2D;font-size:.85rem;margin-top:8px">⚠️ 每轮对话都要付费加载所有工具定义，即使只用其中 1 个。</p>
+  </div>
+</div>
+
+<div class="exp-box">
+  <div class="exp-head green">✅ CLI 方式：按需查询</div>
+  <div class="exp-body">
+    <pre><code>// CLI 模式：启动时只需告诉模型有哪些命令
+// Agent 需要时才执行 --help 按需查询
+
+$ mytool --help          // ~150 tokens
+Usage: mytool &lt;command&gt;
+
+Commands:
+  user      User management
+  calendar  Calendar operations
+  message   Send messages
+
+$ mytool user --help     // ~200 tokens (仅在需要时才消耗)
+$ mytool calendar events list --help  // ~250 tokens
+
+// 总 token 消耗 = 实际使用的命令数 × 单个 help 大小
+// 使用 3 个命令 ≈ 600 tokens（对比 API 的 15,540）</code></pre>
+    <p style="color:#27500A;font-size:.85rem;margin-top:8px">✅ Token 消耗降低约 <strong>96%</strong>。这就是 Unix 哲学中 "做一件事并做好它" 在 AI 时代的经济价值。</p>
+  </div>
+</div>
+
+<h3>2.2.2 优势二：训练数据优势</h3>
+<p>LLM 的训练数据中包含了海量的 shell 命令和 bash 脚本。根据公开数据估算：</p>
+
+<table>
+<tr><th>数据源</th><th>占比</th><th>覆盖内容</th></tr>
+<tr><td>GitHub 公开代码</td><td>约 5%</td><td>git, docker, npm, make, ffmpeg...</td></tr>
+<tr><td>Stack Overflow / 技术问答</td><td>约 2%</td><td>命令用法排错、参数组合</td></tr>
+<tr><td>技术文档 / 教程</td><td>约 1.5%</td><td>官方文档中的 CLI 示例</td></tr>
+</table>
+
+<p>这意味着 <strong>Agent 天生对命令行有相当的"直觉"</strong>——它见过海量 <code>git commit -m "..."</code>、<code>docker run -p 8080:80 ...</code>、<code>curl -X POST -d '...'</code> 的用法。而每个 API 的认证方式、请求格式、错误码规范、分页机制都不同，Agent 必须逐个学习。</p>
+
+<div class="highlight warn">
+  <strong>关键区别：</strong>CLI 的协议是通用的（几十年 Unix 标准化），API 的协议是每个都不一样的。
+</div>
+
+<h3>2.2.3 优势三：可组合性（Unix 管道哲学）</h3>
+<pre><code># 五个命令像乐高一样拼在一起，一行完成复杂任务
+cat access.log \
+  | grep "404" \
+  | awk '{print $7}' \
+  | sort \
+  | uniq -c \
+  | sort -rn \
+  | head -20</code></pre>
+
+<p>这种<strong>管道组合能力</strong>是 GUI 和 API 都难以实现的。GUI 的应用程序通常是单体式的，应用间通信有限；API 可以组合但每次组合都需要编写胶水代码。而 CLI 的管道是操作系统级的原语——零成本、即时可用。</p>
+
+<p>对 Agent 来说这意味着什么？意味着它可以用<strong>同一套推理逻辑</strong>来组合任意 CLI 工具，而不需要为每个工具组合学习新的编排方式。</p>
+
+<h3>2.2.4 优势四：人机通用性</h3>
+<p>这是一个经常被忽略但极其重要的优势：<strong>开发者在终端测试通过的命令，Agent 可以原封不动地直接执行</strong>。</p>
+
+<p>在实际使用 Claude Code / Codex CLI 时，你经常会遇到这样的工作流：你在终端里手动试了一条命令，确认结果正确了，然后让 AI Agent 继续用这条命令去批量处理其他文件。命令完全一样，不需要任何"翻译"或"适配"。</p>
+
+<p>而调用 API 时，程序化的调用方式和浏览器/Postman 中的测试方式往往存在微妙差异（如参数内换行导致错误、Header 大小写敏感等）。</p>
+
+
+<!-- ========== 三、核心矛盾：如何兼顾两种用户 ========== -->
+<h2>三、核心矛盾：如何兼顾"Agent 友好"与"人类友好"</h2>
+
+<p>说到这里，你可能会有一个疑问：</p>
+
+<blockquote>
+  "CLI 对 AI 来说确实很棒，但人类也要用 CLI 啊。交互式提示、彩色输出、终端 TUI（Terminal UI）、进度条动画——这些东西对人类是友好的体验，但对 AI 来说不仅没用，还是负担。难道我们就要砍掉所有这些吗？"
+</blockquote>
+
+<p><strong>这个问题的答案是：不需要二选一。</strong>这正是 Google 的 Justin Poehnelt（Google Workspace CLI 的设计者）在设计 Google Workspace CLI 时提出的核心命题，也是本文最想传递给读者的关键洞察。</p>
+
+<h3>3.1 把数据和呈现解耦</h3>
+
+<p>Google 提出的解决方案可以用一句话概括：<strong>把数据和呈现分离（Decouple data from presentation）</strong>。</p>
+
+<div class="fig">
+<div class="fig" style="max-width:680px;margin-left:auto;margin-right:auto">
+  <img /images/AI-Model/google_7principles_overview.png alt="图3：Google 七大设计原则全景" style="width:100%;border-radius:8px;display:block"/>
+  <p class="fig-cap">图3：Google 七大设计原则全景</p>
+</div>
+  <p class="fig-cap">图3：解耦架构——同一个 CLI 后端，根据调用者身份自动切换呈现方式</p>
+</div>
+
+<p>核心思路是：</p>
+<ul style="padding-left:24px;margin-bottom:14px">
+  <li><strong>CLI 内部只做一件事</strong>——生成数据（结构化的 JSON/NDJSON）</li>
+  <li><strong>呈现层是可插拔的客户端</strong>——人类得到交互式 TUI，Agent 得到原始 JSON</li>
+  <li><strong>不需要维护两套代码库</strong>——状态由后端服务管理，CLI 只是轻量传输层</li>
+</ul>
+
+<pre><code># 人类操作 → 得到漂亮的交互式 TUI 界面
+$ a2acli watch --task abc123
+╭──────────────────────────────────────╮
+│  ✅ Task completed                   │
+│  Duration: 3m 12s                    │
+│  Status: ████████████████████ 100%  │
+╰──────────────────────────────────────╯
+
+# Agent 调用 → 得到干净的 NDJSON 结构化输出
+$ a2acli watch --task abc123 --no-tui
+{"task":"abc123","status":"completed","duration":192,"progress":1.0}</code></pre>
+
+<h3>3.2 自动检测调用者身份</h3>
+<p>实现这种解耦的技术手段非常成熟，主要依赖以下几种检测策略：</p>
+
+<table>
+<tr><th>检测方法</th><th>实现方式</th><th>用途</th></tr>
+<tr><td>TTY 检测</td><td><code>os.isatty(sys.stdout.fileno())</code></td><td>判断是否连接真实终端</td></tr>
+<tr><td>Pipe 检测</td><td><code>sys.stdout.isatty() == False</code></td><td>判断输出是否被重定向</td></tr>
+<tr><td>环境变量</td><td><code>NO_COLOR</code>, <code>[APP]_NO_TUI</code></td><td>显式禁用交互式特性</td></tr>
+<tr><td>Flag 参数</td><td><code>--json</code>, <code>--no-tui</code>, <code>--yes</code></td><td>显式指定输出格式</td></tr>
+</table>
+
+<div class="highlight blue-dark">
+  <strong>飞书 CLI 的实践</strong>：支持五种输出格式——<code>JSON</code>、<code>NDJSON</code>、<code>table</code>、<code>CSV</code>、<code>pretty</code>。人类默认看 pretty 格式，Agent 加 <code>--json</code> 就能得到结构化数据。GitHub CLI 更进一步——<strong>检测到 stdout 被 pipe 时，自动切换为 tab 分隔格式，去掉颜色转义符和截断限制</strong>。
+</div>
+
+
+<!-- ========== 四、设计原则 ========== -->
+<h2>四、Google 的 7 条 CLI 设计原则详解</h2>
+
+<p>有了上述理论基础，我们来看具体的设计规范。Google 的 Justin Poehnelt 在发布 Workspace CLI 时同步提出了 7 条面向 AI Agent 的 CLI 设计原则。以下结合实际案例逐一解读。</p>
+
+<!-- 原则1 -->
+<div class="principle-card">
+  <span class="pc-num">1</span>
+  <span class="pc-title">可发现性（Discoverability）——帮 Agent 找到入口</span>
+  <div class="pc-body">
+    <p>人类会随机探索、读错误信息、搜 Google、问同事。但 <strong>Agent 只能从你提供的信息里推断该怎么做</strong>。</p>
+    <p><strong>三条规则：</strong></p>
+    <ul style="padding-left:20px;margin:8px 0">
+      <li><strong>按功能分组，不按字母排序</strong>——Agent 扫描的是结构，不是字母表</li>
+      <li><strong>显式标注入口点</strong>——help 描述里加 <code>(start here)</code> 或 <code>(typical first step)</code></li>
+      <li><strong>示例比描述更重要</strong>——Agent 会解析示例来推断 flag 的用法</li>
+    </ul>
+  </div>
+  <div class="pc-example">
+    <pre><code>$ mytool --help
+Usage: mytool &lt;command&gt;
+
+Commands:
+  init        Initialize a new project  ← (start here)
+  deploy      Deploy to production
+  monitor     Monitor running services
+  logs        View application logs
+
+Options:
+  --help      Show help
+  --version   Show version
+
+Examples:
+  mytool init --template node-express    # Create new project
+  mytool deploy --env prod               # Deploy to production
+  mytool logs --since 1h                 # View recent logs</code></pre>
+  </div>
+</div>
+
+<!-- 原则2 -->
+<div class="principle-card">
+  <span class="pc-num">2</span>
+  <span class="pc-title">Agent 优先的互操作性（Interoperability）</span>
+  <div class="pc-body">
+    <p>每个产生数据的命令必须支持 <code>--json</code> 或 <code>--no-tui</code> flag。输出必须是合法 JSON 或 NDJSON，不能混入日志。</p>
+    <p><strong>保护 Agent 的上下文窗口：</strong>默认截断大文本块、脱敏敏感信息；需要完整数据时要求显式加 <code>--full</code> 或 <code>--verbose</code>。</p>
+  </div>
+  <div class="pc-example">
+    <pre><code># 默认返回精简结果（保护上下文窗口）
+$ mytool tasks list
+[{"id":"t1","title":"Fix login bug","status":"open"},
+ {"id":"t2","title":"Add dark mode","status":"in_progress"}]
+Showing 2 of 47 tasks. Use --limit 50 for more.
+
+# 显式要求完整数据
+$ mytool tasks list --full --limit 50</code></pre>
+  </div>
+</div>
+
+<!-- 原则3 -->
+<div class="principle-card">
+  <span class="pc-num">3</span>
+  <span class="pc-title">配置优先级（Configuration Hierarchy）</span>
+  <div class="pc-body">
+    <p>严格遵循标准优先级链：</p>
+    <pre style="background:#f5f6fa;padding:10px 16px;border-radius:6px;font-size:.85rem;margin:8px 0"><code>CLI Flag &gt; 环境变量 &gt; 配置文件 &gt; 默认值</code></pre>
+    <p>Agent 不需要知道 URL 和 token，只需传 <code>--env prod</code>，CLI 自己去找对应配置。</p>
+  </div>
+</div>
+
+<!-- 原则4 -->
+<div class="principle-card">
+  <span class="pc-num">4</span>
+  <span class="pc-title">错误要给出解决路径（Actionable Errors）</span>
+  <div class="pc-body">
+    <p>每条错误信息后面加 <code>Hint:</code>，Agent 可以解析来自我纠正。<strong>尽早失败</strong>：在执行重逻辑之前先验证配置和连接，不要让 Agent 等 30 秒之后才发现 token 不对。</p>
+  </div>
+  <div class="pc-example">
+    <pre><code># ❌ 坏的错误信息
+Error: database not initialized
+
+# ✅ 好的错误信息
+Error: database not initialized
+Hint: run 'mytool init' to create the local database
+  Or: mytool init --db-path ./data/mydb.sqlite</code></pre>
+  </div>
+</div>
+
+<!-- 原则5 -->
+<div class="principle-card">
+  <span class="pc-num">5</span>
+  <span class="pc-title">Flag 一致性（Flag Consistency）</span>
+  <div class="pc-body">
+    <p>同一个缩写在所有命令里必须代表同一个意思。不一致的 Flag 会破坏 Agent 的推理——它在一个命令里学到的规律不能用在其他命令上。<strong>破坏性操作必须要求显式 Flag 才能触发</strong>。</p>
+  </div>
+  <div class="example-list" style="padding-left:44px;margin-top:8px">
+    <table style="width:auto;margin:8px 0">
+    <tr><th style="background:#FAEEDA;color:#333">❌ 不一致</th><th style="background:#EAF3DE;color:#333">✅ 一致</th></tr>
+    <tr><td><code>-v</code>: verbose / version / validate</td><td><code>-v</code>: 始终表示 verbose</td></tr>
+    <tr><td><code>-q</code>: quiet / query / queue</td><td><code>--quiet</code>: 始终表示安静模式</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 原则6 -->
+<div class="principle-card">
+  <span class="pc-num">6</span>
+  <span class="pc-title">语义化视觉设计（Semantic Visual Design）</span>
+  <div class="pc-body">
+    <p>用"语义色彩 token"而非直接用颜色名称：定义 <code>Pass</code> token 对应绿色（成功）、<code>Warn</code> 对应黄色（警告）、<code>Error</code> 对应红色（失败）、<code>Meta</code> 对应灰色（元数据）。<strong>不要给描述文字和帮助文本上色</strong>——过度上色等于什么都没强调。</p>
+  </div>
+</div>
+
+<!-- 原则7 -->
+<div class="principle-card">
+  <span class="pc-num">7</span>
+  <span class="pc-title">版本管理与生命周期（Lifecycle Management）</span>
+  <div class="pc-body">
+    <p><code>--version</code> 要能用，重要更新时主动提示。<strong>优雅处理 SIGINT（Ctrl+C）</strong>：不能出现数据损坏，Agent 可能在任何时刻被上层系统打断。<strong>写操作记录操作者</strong>：从 <code>git config user.name</code> 获取身份并记录——在多 Agent 协作场景下，审计追溯越来越重要。</p>
+  </div>
+</div>
+
+
+<!-- ========== 五、进阶：Agent 时代的五大设计哲学 ========== -->
+<h2>五、进阶：Agent 时代的五大 CLI 设计哲学</h2>
+
+<p>在 Google 7 条原则的基础上，社区还总结出了更深层的五条设计哲学。如果说 Google 7 条是"操作手册"，那这 5 条就是"底层思维模型"。</p>
+
+<div class="fig">
+<div class="fig" style="max-width:680px;margin-left:auto;margin-right:auto">
+  <img /images/AI-Model/design_philosophy_framework.png alt="图4：五大设计哲学框架" style="width:100%;border-radius:8px;display:block"/>
+  <p class="fig-cap">图4：五大设计哲学框架</p>
+</div>
+  <p class="fig-cap">图4：Agent时代CLI设计的五大哲学维度</p>
+</div>
+
+<h3>5.1 ① 上下文经济性（Context Economy）</h3>
+<p><strong>核心诉求：</strong>每轮 CLI 调用消耗的 token 要尽可能少，信息密度要尽可能高。</p>
+
+<div class="exp-box">
+  <div class="exp-head red">人类友好的输出 (~45 tokens)</div>
+  <div class="exp-body">
+    <pre><code>╭──────────────────────────────────╮
+│  ✓ 3 layers in project           │
+│  0: Background (solid)           │
+│  1: Photo (image, 80%)           │
+│  2: Title (text)                 │
+╰──────────────────────────────────╯</code></pre>
+  </div>
+</div>
+<div class="exp-box">
+  <div class="exp-head green">Agent 友好的输出 (~25 tokens，信息量相同)</div>
+  <div class="exp-body">
+    <pre><code>[{"i":0,"name":"Background","type":"solid"},
+ {"i":1,"name":"Photo","type":"image","opacity":0.8},
+ {"i":2,"name":"Title","type":"text"}]</code></pre>
+    <p style="color:#27500A;font-size:.85rem;margin-top:8px">Token 消耗减少约 <strong>45%</strong>。单次差异不大，但复杂任务可能调用数十次 CLI，差异累积显著。</p>
+  </div>
+</div>
+
+<h3>5.2 ② 调用经济性（Call Economy）</h3>
+<p><strong>核心诉求：</strong>完成一个任务所需的 CLI 调用轮次要尽可能少。</p>
+
+<pre><code># ❌ 需要两轮调用（操作 + 查询确认）
+$ cli layer move 2 --to 0
+{"moved":2,"to":0,"status":"ok"}
+$ cli layer list              # Agent 还得再调一次才能确认结果
+
+# ✅ 只需一轮调用（操作 + 结果状态一起返回）
+$ cli layer move 2 --to 0
+{"moved":2,"to":0,"current_order":["Title","Background","Photo"]}</code></pre>
+
+<p><strong>设计含义：</strong>每个状态变更命令的返回值中应包含操作后的关键状态快照，避免"先执行、再查询"的两步模式。</p>
+
+<h3>5.3 ③ Cache 友好性（Cache Friendliness）</h3>
+<p><strong>核心诉求：</strong>CLI 输出在状态未变时应保持字面完全一致，以利于 LLM 推理的 prompt cache 命中。</p>
+
+<pre><code>// ❌ 带时间戳 → 每轮都不同 → 从此点开始 cache miss
+{"name":"my_project","layers":3,"last_modified":"2026-03-15T21:35:11Z"}
+
+// ✅ 纯结构状态 → 项目没变就字面一致 → cache 命中
+{"name":"my_project","layers":3}</code></pre>
+
+<p>很多 Agent 框架在组装每轮上下文时会重新注入工具状态。如果这部分输出带时间戳，每轮都不同，从该插入点开始后面全部 cache miss——这在高频调用场景下的成本影响是巨大的。</p>
+
+<h3>5.4 ④ 模型友好性（Model Friendliness）</h3>
+<p><strong>核心诉求：</strong>CLI 设计应尽量贴合训练数据中大量存在的 CLI 范式，降低模型幻觉概率。</p>
+
+<pre><code>// ❌ 非标准命名 → 模型可能幻觉出 --json（因为训练数据中更常见）
+$ mytool export --machine-readable
+
+// ✅ 标准 → 贴合高频模式，模型不会猜错
+$ mytool export --json
+
+// ❌ 非标准子命令结构
+$ mytool do --action=list --type=layer
+
+// ✅ 标准子命令（和 git/docker/kubectl 一致）
+$ mytool layer list</code></pre>
+
+<blockquote style="margin:16px 0">
+  <strong>Convention over creativity</strong> ——在 Agent 时代，遵循约定比追求独特更重要。
+</blockquote>
+
+<h3>5.5 ⑤ Skill-CLI 责任边界（Responsibility Boundary）</h3>
+<p><strong>核心诉求：</strong>确定性的可重复模式封装到 CLI 中；创意性的、依赖上下文的编排交给 Skill 引导 Agent 完成。</p>
+
+<div class="fig">
+<div class="fig" style="max-width:680px;margin-left:auto;margin-right:auto">
+  <img /images/AI-Model/agent_weakness_prevention.png alt="图5：Agent 四大认知弱点与对策" style="width:100%;border-radius:8px;display:block"/>
+  <p class="fig-cap">图5：Agent 四大认知弱点与对策</p>
+</div>
+  <p class="fig-cap">图5：Agent→Skill→CLI三层架构及责任边界</p>
+</div>
+
+<pre><code># ✅ 适合封装到 CLI（确定性批量操作）
+cli batch convert --input "*.png" --format webp --quality 80
+# 如果让 Agent 编排：每张图 3 轮 × 100 张 = 300 轮推理循环！
+
+# ✅ 适合 Skill + Agent 编排（依赖上下文的创意任务）
+cli project new --width 1080 --height 1080
+cli layer add-from-file photo.jpg            # Agent 决定加哪张图
+cli filter add brightness -l 0 -p factor=1.3 # Agent 根据图片决定参数
+cli draw text --text "Hello" --size 48       # Agent 决定文案</code></pre>
+
+<p><strong>经验法则：</strong>如果一个流程每次执行步骤都一样 → 放入 CLI；如果步骤取决于上下文 → 交给 Skill + Agent 编排。</p>
+
+
+<!-- ========== 六、人机交互设计的关键细节 ========== -->
+<h2>六、人机交互设计的关键细节：防住 Agent 的弱点</h2>
+
+<p>了解了宏观原则之后，我们来看看具体的设计细节。Agent 并非万能——它有自己独特的"认知缺陷"，好的 CLI 设计就是要<strong>帮 Agent 避坑</strong>。</p>
+
+<h3>6.1 Agent 的四大认知弱点</h3>
+
+<table>
+<tr><th>弱点</th><th>表现</th><th>CLI 应对策略</th></tr>
+<tr>
+  <td><strong>大小写混淆</strong></td>
+  <td><code>grep -a</code> vs <code>grep -A</code> 含义完全不同；Agent 基于 token 概率选错</td>
+  <td>所有参数必须有长格式 <code>--ascii</code> / <code>--after-context</code></td>
+</tr>
+<tr>
+  <td><strong>交互式提示恐惧</strong></td>
+  <td><code>Are you sure? [y/N]</code> 对 Agent 是一堵墙</td>
+  <td><code>--yes</code>/<code>--no-interactive</code> 跳过所有提示</td>
+</tr>
+<tr>
+  <td><strong>参数幻觉</strong></td>
+  <td>Agent 自信地使用不存在的 <code>--smart-mode</code></td>
+  <td>枚举约束 + schema 自省 + 严格输入验证</td>
+</tr>
+<tr>
+  <td><strong>非结构化输出困惑</strong></td>
+  <td>人类可读的 table 输出对 Agent 来说靠猜</td>
+  <td>stdout 输出 JSON，stderr 输出状态信息</td>
+</tr>
+</table>
+
+<div class="highlight warn">
+  <strong>真实灾难案例：</strong>2019 年 AWS CLI v2 将默认 pager 改为 <code>less</code>，导致全球数千个 CI 任务挂起——因为 <code>less</code> 是一个交互式程序，在非 TTY 环境中等待输入永远不会返回。这个教训在今天更加重要：<strong>每一个有副作用的命令都必须考虑"如果被 Agent 自动调用会发生什么"</strong>。
+</div>
+
+<h3>6.2 干跑（Dry-run）：给 Agent 探索-验证的反馈循环</h3>
+<p>每个有副作用的命令都应该支持 <code>--dry-run</code>。好的干跑输出不只是"将会做什么"，而是<strong>结构化的 diff</strong>，精确告知 Agent 什么会被创建、修改或删除。</p>
+
+<pre><code>$ lark-cli calendar event create \
+    --title "团队周会" \
+    --start "2026-05-15T14:00" \
+    --dry-run
+
+{
+  "dry_run": true,
+  "action": "create",
+  "resource": "calendar_event",
+  "changes": {
+    "created": [{"title":"团队周会","start":"2026-05-15T14:00+08:00"}],
+    "modified": [],
+    "deleted": []
+  },
+  "request_url": "https://open.feishu.cn/open-apis/calendar/v4/calendars/primary/events",
+  "method": "POST"
+}</code></pre>
+
+<p><strong>Lightning Labs 的创新实践</strong>：<code>--dry-run</code> 使用专门的退出码（exit code 10），这样 Agent 可以通过退出码区分"干跑成功"和"真正执行成功"，实现更精细的控制流。</p>
+
+<h3>6.3 退出码控制：细粒度语义</h3>
+<p>不要只用 0/1。细粒度的退出码能让 Agent 用 <code>case/switch</code> 直接路由不同的恢复策略：</p>
+
+<table>
+<tr><th>退出码</th><th>含义</th><th>Agent 应对策略</th></tr>
+<tr><td><code>0</code></td><td>成功</td><td>继续执行下一步</td></tr>
+<tr><td><code>1</code></td><td>一般错误</td><td>读 stderr 诊断</td></tr>
+<tr><td><code>2</code></td><td>参数错误</td><td>修正参数后重试</td></tr>
+<tr><td><code>3</code></td><td>资源不存在</td><td>跳过或先创建资源</td></tr>
+<tr><td><code>4</code></td><td>权限不足</td><td>提示用户授权</td></tr>
+<tr><td><code>5</code></td><td>冲突/已存在</td><td>跳过或更新</td></tr>
+<tr><td><code>10</code></td><td>Dry-run 成功</td><td>确认后执行正式操作</td></tr>
+</table>
+
+<div class="highlight info">
+  <strong>重要提醒：</strong>退出码一旦发布即为契约（Contract），不可随意修改——就像 Kubernetes v1.18 移除 <code>--export</code> 导致数千 Helm chart 崩溃的教训一样。
+</div>
+
+<h3>6.4 幂等设计：Agent 会重试</h3>
+<p>Agent 会因为网络超时、任务中断、结果不确定等各种原因重试。<strong>命令式操作在重复执行时会报错；声明式操作无论执行多少次结果一致。</strong></p>
+
+<pre><code># ❌ 命令式：第二次执行报错
+$ mytool user create --name john
+Created user "john"
+$ mytool user create --name john
+Error: user "john" already exists
+
+# ✅ 声明式：无论执行多少次，结果一致
+$ mytool user ensure --name john
+User "john" is ready.
+$ mytool user ensure --name john
+User "john" is ready.
+
+# 或者使用条件标志
+$ mytool user create --name john --if-not-exists</code></pre>
+
+<p><code>kubectl apply</code> 是声明式设计的教科书级案例。飞书 CLI 则更进一步——<code>+messages-send</code> 支持 <code>--idempotency-key</code> 参数：Agent 传入唯一标识符，即使命令被重复执行，服务端也只会处理一次。</p>
+
+<h3>6.5 错误即指南</h3>
+<p>好的错误信息应该包含四个要素：</p>
+
+<div class="fig">
+<div class="fig" style="max-width:680px;margin-left:auto;margin-right:auto">
+  <img /images/AI-Model/dual_output_architecture.png alt="图6：人机兼顾双输出架构" style="width:100%;border-radius:8px;display:block"/>
+  <p class="fig-cap">图6：人机兼顾双输出架构</p>
+</div>
+  <p class="fig-cap">图6：Agent友好错误信息的四个必要要素</p>
+</div>
+
+<pre><code>{
+  "error": "permission_denied",       // ① 错误类型（机器可读）
+  "message": "缺少 calendar:read 权限", // ② 描述（发生了什么）
+  "suggestion": "运行 lark-cli auth login --domain calendar 授权", // ③ 修复建议
+  "retryable": false                  // ④ 是否可重试
+}</code></pre>
+
+
+<!-- ========== 七、实战评估 ========== -->
+<h2>七、实战评估：谁做得好，谁还需要改进</h2>
+
+<h3>7.1 飞书 CLI 评估</h3>
+<div class="exp-box">
+  <div class="exp-head green">✅ 做得好的</div>
+  <div class="exp-body">
+    <ul style="padding-left:18px">
+      <li>noun-verb 层级命令结构清晰，Agent 可树搜索探索</li>
+      <li>三层架构（REST API → SDK → CLI），Agent 按需选择抽象层级</li>
+      <li><code>schema</code> 命令提供完整 API 自省能力</li>
+      <li>五种输出格式（JSON/NDJSON/table/CSV/pretty）</li>
+      <li>按域申请权限（最小权限原则），不足时自动提示修复方案</li>
+      <li><code>--yes</code> 明确标注为"AI Agent 模式"</li>
+    </ul>
+  </div>
+</div>
+<div class="exp-box">
+  <div class="exp-head red">⚠️ 可改进的</div>
+  <div class="exp-body">
+    <ul style="padding-left:18px">
+      <li>非 TTY 下没有自动切 JSON（需要手动加 <code>--json</code>）</li>
+      <li>退出码没有文档化的细粒度语义</li>
+      <li><code>--idempotency-key</code> 应该更广泛地应用到其他写操作</li>
+    </ul>
+  </div>
+</div>
+
+<h3>7.2 钉钉 CLI 评估</h3>
+<div class="exp-box">
+  <div class="exp-head green">✅ 做得好的</div>
+  <div class="exp-body">
+    <ul style="padding-left:18px">
+      <li><code>--yes</code> 参数描述为"跳过确认提示（AI Agent 模式）"——语义自描述，Agent 一看就懂该什么时候加</li>
+      <li><code>--mock</code> 参数方便调试和测试</li>
+      <li>帮助文本全中文（对中文 LLM 更友好，减少中英混杂的幻觉风险）</li>
+      <li>批量熔断机制防止 Agent 失控循环调用</li>
+    </ul>
+  </div>
+</div>
+<div class="exp-box">
+  <div class="exp-head red">⚠️ 可改进的</div>
+  <div class="exp-body">
+    <ul style="padding-left:18px">
+      <li>命令只有两层，缺少 shortcut 快捷层</li>
+      <li>没有 schema 自省命令</li>
+      <li>输出格式只有三种（JSON/Table/Text），缺少 NDJSON 流式输出</li>
+      <li>帮助文本缺少可直接复制粘贴的使用示例</li>
+    </ul>
+  </div>
+</div>
+
+<h3>7.3 用五大哲学评估 CLI-Anything 项目</h3>
+
+<table>
+<tr><th>原则</th><th>评分</th><th>具体问题</th></tr>
+<tr><td>上下文经济性</td><td style="color:#A32D2D;font-weight:600">❌ 差</td><td>默认输出人类友好格式，JSON 只是 opt-in；499 行 repl_skin.py 全是边框/emoji/彩色——Agent 不需要任何一行</td></tr>
+<tr><td>调用经济性</td><td style="color:#EF9F27;font-weight:600">⚠️ 中</td><td><code>layer move</code> 只返回 <code>{"moved":2,"to":0}</code>，不含新排列顺序；Agent 想确认结果还得再调一轮</td></tr>
+<tr><td>Cache 友好性</td><td style="color:#A32D2D;font-weight:600">❌ 差</td><td>代码里随意嵌入 <code>datetime.now().isoformat()</code>，每次快照输出都不同</td></tr>
+<tr><td>模型友好性</td><td style="color:#639922;font-weight:600">✅ 好</td><td>Click 框架 + 标准子命令结构 + <code>--json</code> flag；但不是刻意为 Agent 设计的，只是 Python CLI 的通用最佳实践</td></tr>
+<tr><td>Skill-CLI 责任边界</td><td style="color:#A32D2D;font-weight:600">❌ 差</td><td>没有任何 batch 命令；REPL 交互模式却是默认入口——Unix 哲学反对它，Agent 时代更不合适</td></tr>
+</table>
+
+
+<!-- ========== 八、设计 Checklist ========== -->
+<h2>八、落地清单：AI 原生 CLI 设计 Checklist</h2>
+
+<p>以下是综合 Google 7 条原则 + 社区 10 条原则 + 五大哲学后整理的完整落地清单。你可以直接用它来审查你的 CLI 工具。</p>
+
+<div class="fig">
+<div class="fig" style="max-width:680px;margin-left:auto;margin-right:auto">
+  <img /images/AI-Model/checklist_radar.png alt="图7：20项落地 Checklist 能力雷达" style="width:100%;border-radius:8px;display:block"/>
+  <p class="fig-cap">图7：20项落地 Checklist 能力雷达</p>
+</div>
+  <p class="fig-cap">图7：AI原生CLI设计完整Checklist（共20项检查点）</p>
+</div>
+
+
+<!-- ========== 九、总结与展望 ========== -->
+<h2>九、总结与展望</h2>
+
+<div class="insight">
+  <p><strong>2026 年最好的 CLI，不是终端界面最漂亮的那些，</strong></p>
+  <p><strong>而是当人类输入命令和当 Agent 编程调用时，同样运行良好的那些。</strong></p>
+</div>
+
+<p>回顾全文，我们的核心论点可以概括为三层：</p>
+
+<div class="highlight info">
+  <p><strong>第一层（为什么是 CLI）：</strong>LLM 是文本概率模型，CLI 是文本协议——两者天然匹配。加上渐进式发现的 Token 经济优势、训练数据的先验知识红利、Unix 管道的可组合能力、以及人机通用的互操作性，CLI 成为 AI 时代能力分发的最优解。</p>
+</div>
+
+<div class="highlight blue-dark">
+  <p><strong>第二层（如何兼顾两种用户）：</strong>"数据和呈现解耦"是关键架构思想。同一个 CLI 后端，通过检测 TTY/pipe/环境变量自动切换呈现层——人类得到漂亮的 TUI 和彩色表格，Agent 得到干净的 JSON 结构化数据。不需要维护两套代码库。</p>
+</div>
+
+<div class="highlight">
+  <p><strong>第三层（具体怎么做）：</strong>Google 的 7 条设计原则提供了操作框架，而社区总结的五条设计哲学（上下文经济性、调用经济性、Cache 友好性、模型友好性、Skill-CLI 责任边界）提供了底层思维模型。配合本文整理的 20 项 Checklist，你可以系统性地审查和改进你的 CLI 工具。</p>
+</div>
+
+<h3>9.1 这不仅是 CLI 的问题</h3>
+
+<p>这套框架的适用范围远超 CLI。<strong>随着 Agent 介入各种工具链，SDK、API、内部平台工具迟早都会被 Agent 调用。</strong>"对人类友好"和"对 Agent 可用"将成为每个工具必须同时满足的要求。</p>
+
+<p>你可以用这五个问题来审视任何面向 Agent 的接口：</p>
+
+<table>
+<tr><th>#</th><th>问题</th><th>优化方向</th></tr>
+<tr><td>1</td><td>你的输出占用 Agent 多少上下文？</td><td>上下文经济性 → 默认精简 JSON</td></tr>
+<tr><td>2</td><td>Agent 需要几轮调用才能完成任务？</td><td>调用经济性 → 返回操作后状态快照</td></tr>
+<tr><td>3</td><td>你的输出在状态不变时能否保持一致？</td><td>Cache 友好性 → 避免易变元数据</td></tr>
+<tr><td>4</td><td>你的接口设计贴合模型的先验知识吗？</td><td>模型友好性 → 遵循业界惯例命名</td></tr>
+<tr><td>5</td><td>哪些逻辑该你做，哪些该让 Agent 做？</td><td>责任边界 → 确定性与创意性分离</td></tr>
+</table>
+
+<h3>9.2 GUI 的不可替代场景</h3>
+
+<p>在大力推崇 CLI 的同时，我们也必须承认 GUI 在以下场景中的<strong>不可替代性</strong>：</p>
+
+<ul style="padding-left:24px;margin-bottom:14px">
+  <li><strong>视觉设计任务</strong>：UI 架构设计、数据可视化、视频编辑、图像处理——文本表示空间关系极其笨拙</li>
+  <li><strong>探索性交互</strong>：新手入门、临时单次操作——GUI 的可见即可操作大幅降低认知门槛</li>
+  <li><strong>实时预览需求</strong>：需要即时视觉反馈的创意工作——"所见即所得"无可替代</li>
+  <li><strong>非技术用户</strong>：对没有命令行经验的用户，GUI 仍然是唯一可行的入口</li>
+</ul>
+
+<p>TUI（Terminal UI）框架如 Charm / Bubbletea 提供了一个有趣的中间地带——在终端内实现结构化的视觉呈现，保留 CLI 的可组合性和脚本化能力，同时提供组织布局、颜色、键盘导航等增强体验。</p>
+
+<h3>9.3 最终结论</h3>
+
+<blockquote>
+  也许，CLI 一直就没退场，只是大家习惯了更花哨的界面，慢慢把它当成了老古董。现在 AI 来了，而它刚刚好。<br><br>
+  就像蒸汽机车和高铁动车同框的照片——<strong>不是谁取代了谁，而是每一种技术都有它合适的场景</strong>。AI 时代不是 CLI 的复兴，而是 CLI 找到了它最合适的搭档。
+</blockquote>
+
+
+<!-- ========== 参考文献 ========== -->
+<div class="ref">
+  <strong>参考文献：</strong>
+  <ol>
+    <li>Justin Poehnelt (Google), "Build a CLI for AI agents &amp; humans in less than 10 mins", Google Cloud Blog, 2026-03</li>
+    <li>Trevin Chow, "7 Principles for Agent-Friendly CLIs", Trevin's Notes, 2026-03 (已更新为 10 Principles)</li>
+    <li>HawkHai, "给 Agent 设计 CLI 的十个原则", 2026-04 — 综合分析 Google 7 原则 + Agent 设计哲学</li>
+    <li>飞哥数智谈, "都2026了，AI Agent 为什么偏偏选中了 CLI？", fgszt.com, 2026-04</li>
+    <li>腾讯云开发者社区, "CLI工具为什么在2026年集体爆发？AI原生命令行的全面复兴", 2026-03</li>
+    <li>Adrienne Vermorel, "Agent-First CLI Design Principles", 2026-03 — Google Workspace CLI 设计哲学解读</li>
+    <li>Agent Wiki, "CLI vs Graphical Interfaces", agentwiki.org, 2026-05 — AI Agent 场景下 CLI vs GUI 系统对比</li>
+    <li>BetterStack Community, "Google Workspace CLI: An Agent-First Interface", 2026-03</li>
+    <li>Anthropic, "Tool Design Guidelines for Claude Code" — 描述是影响工具使用准确率的最关键因素</li>
+    <li>Kubernetes Changelog, v1.14-v1.18 — --export 移除导致的破坏性变更教训</li>
+    <li>AWS CLI v2 Release Notes, 2019 — 默认 pager 改为 less 导致的 CI 灾难</li>
+  </ol>
+</div>
+
+
+</div></div>
+</div><footer class="page-edit-meta"><div class="time-info"><span class="xicon-container left"><!--[--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:inherit;"><path d="M26 4h-4V2h-2v2h-8V2h-2v2H6c-1.1 0-2 .9-2 2v20c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 22H6V12h20v14zm0-16H6V6h4v2h2V6h8v2h2V6h4v4z" fill="currentColor"/></svg><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->2026-05-12<!--]--></span></span></div><div class="words-info"><span class="xicon-container left"><!--[--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:inherit;"><path d="M19 10H5a3 3 0 00-3 3v11a3 3 0 003 3h14a3 3 0 003-3V13a3 3 0 00-3-3zm0 14H5V13h14v11zM23 7h-4V5a2 2 0 012-2h0a2 2 0 012 2v2h4v2h-6V7z" fill="currentColor"/></svg><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->5 min read<!--]--></span></span></div><div class="categories-tags-info"><div class="category-link"><a href="/categories/AI-Model/1.html" class=""><!--[--><span class="xicon-container left"><!--[--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:;"><path d="M11.17 6l3.42 3.41l.58.59H28v16H4V6h7.17m0-2H4a2 2 0 0 0-2 2v20a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2H16l-3.41-3.41A2 2 0 0 0 11.17 4z" fill="currentColor"/></svg><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->AI<!--]--></span></span><!--]--></a></div><div class="tag-link"><a href="/tags/AI-Model/1.html" class="" style="border-color:#378ADD;"><!--[--><span class="xicon-container left"><!--[--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:;"><path d="M10 14a4 4 0 1 1 4-4a4.005 4.005 0 0 1-4 4zm0-6a2 2 0 1 0 1.998 2.004A2.002 2.002 0 0 0 10 8z" fill="currentColor"/><path d="M16.644 29.415L2.586 15.354A2 2 0 0 1 2 13.941V4a2 2 0 0 1 2-2h9.941a2 2 0 0 1 1.414.586l14.06 14.058a2 2 0 0 1 0 2.828l-9.943 9.943a2 2 0 0 1-2.829 0zM4 4v9.942L18.058 28L28 18.058L13.942 4z" fill="currentColor"/></svg><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->AI Model<!--]--></span></span><!--]--></a><a href="/tags/%E5%A4%A7%E6%A8%A1%E5%9E%8B/1.html" class="" style="border-color:#67cc86;"><!--[--><span class="xicon-container left"><!--[--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:;"><path d="M10 14a4 4 0 1 1 4-4a4.005 4.005 0 0 1-4 4zm0-6a2 2 0 1 0 1.998 2.004A2.002 2.002 0 0 0 10 8z" fill="currentColor"/><path d="M16.644 29.415L2.586 15.354A2 2 0 0 1 2 13.941V4a2 2 0 0 1 2-2h9.941a2 2 0 0 1 1.414.586l14.06 14.058a2 2 0 0 1 0 2.828l-9.943 9.943a2 2 0 0 1-2.829 0zM4 4v9.942L18.058 28L28 18.058L13.942 4z" fill="currentColor"/></svg><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->大模型<!--]--></span></span><!--]--></a><a href="/tags/%E6%8E%A8%E7%90%86%E6%9C%BA%E5%88%B6/1.html" class="" style="border-color:#f47e60;"><!--[--><span class="xicon-container left"><!--[--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:;"><path d="M10 14a4 4 0 1 1 4-4a4.005 4.005 0 0 1-4 4zm0-6a2 2 0 1 0 1.998 2.004A2.002 2.002 0 0 0 10 8z" fill="currentColor"/><path d="M16.644 29.415L2.586 15.354A2 2 0 0 1 2 13.941V4a2 2 0 0 1 2-2h9.941a2 2 0 0 1 1.414.586l14.06 14.058a2 2 0 0 1 0 2.828l-9.943 9.943a2 2 0 0 1-2.829 0zM4 4v9.942L18.058 28L28 18.058L13.942 4z" fill="currentColor"/></svg><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->推理机制<!--]--></span></span><!--]--></a><a href="/tags/%E7%BB%8F%E9%AA%8C%E6%8E%A8%E7%90%86/1.html" class="" style="border-color:#f47e60;"><!--[--><span class="xicon-container left"><!--[--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:;"><path d="M10 14a4 4 0 1 1 4-4a4.005 4.005 0 0 1-4 4zm0-6a2 2 0 1 0 1.998 2.004A2.002 2.002 0 0 0 10 8z" fill="currentColor"/><path d="M16.644 29.415L2.586 15.354A2 2 0 0 1 2 13.941V4a2 2 0 0 1 2-2h9.941a2 2 0 0 1 1.414.586l14.06 14.058a2 2 0 0 1 0 2.828l-9.943 9.943a2 2 0 0 1-2.829 0zM4 4v9.942L18.058 28L28 18.058L13.942 4z" fill="currentColor"/></svg><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->经验推理<!--]--></span></span><!--]--></a><a href="/tags/Transformer/1.html" class="" style="border-color:#f47e60;"><!--[--><span class="xicon-container left"><!--[--><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewbox="0 0 32 32" class="xicon-icon" style="width:18px;height:18px;font-size:18px;color:;"><path d="M10 14a4 4 0 1 1 4-4a4.005 4.005 0 0 1-4 4zm0-6a2 2 0 1 0 1.998 2.004A2.002 2.002 0 0 0 10 8z" fill="currentColor"/><path d="M16.644 29.415L2.586 15.354A2 2 0 0 1 2 13.941V4a2 2 0 0 1 2-2h9.941a2 2 0 0 1 1.414.586l14.06 14.058a2 2 0 0 1 0 2.828l-9.943 9.943a2 2 0 0 1-2.829 0zM4 4v9.942L18.058 28L28 18.058L13.942 4z" fill="currentColor"/></svg><!--]--><span class="xicon-content" style="color:;font-size:14px;"><!--[-->Transformer<!--]--></span></span><!--]--></a></div></div></div></footer></main><!--]--></div><!----><!----><!----><!--]--></div></div>
+    <script src="/assets/js/runtime~app.4d55a42b.js" defer></script><script src="/assets/js/103.5f9a2a3e.js" defer></script><script src="/assets/js/app.e8abd92e.js" defer></script>
+  </body>
+</html>
